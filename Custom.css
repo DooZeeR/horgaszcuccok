@@ -1,0 +1,325 @@
+
+body{
+    font-family: 'Oswald', sans-serif;
+	background-color: lightgrey;
+	background-image: url("háttr.jpg");
+}
+.Breakpoints{
+    text-align: center;
+    font-weight: bold;
+}
+.Box{
+    border: 1px solid black;
+    text-align: center;
+}
+.Box-logo{
+   /* border: 1px solid black;*/
+    text-align: center;
+}
+.szelesseg{
+    max-width: 1500px;
+}
+img.Logo{
+    max-height: 150px;
+    width: auto;
+}
+@media screen and (min-width: 768px) {
+    #logo{
+    padding-right: 0;
+    }
+    #menu{
+        padding-left: 0;  
+    }
+}
+.termek{
+    height: 100%;
+    margin: 5px, 5px, 5px, 5px; 
+	padding: 5px, 5px, 5px, 5px;
+    -webkit-box-shadow: 15px 15px 15px -1px rgba(0,0,0,0.6);
+    -moz-box-shadow: 15px 15px 15px -1px rgba(0,0,0,0.6);
+    box-shadow: 15px 15px 15px -1px rgba(0,0,0,0.6);
+    border: 1px solid black;
+}
+#termek{
+    margin-top: 25px; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+#termek:hover{
+    transform: scale(1.03);
+}
+.lablec{
+    margin-top: 25px; 
+}
+.navbar-nav{
+    font-size: 25px;
+}
+.card-img-top{
+    width: unset;
+    max-height: 300px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.img-holder{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	/*padding: 5px;*/
+	margin: 5px;
+}
+.login-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+.login-active{
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.login{
+    position: relative;
+    background-color: white;
+    width: 30%;
+    min-width: 300px;;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login-close, .reg-close{
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 99%;
+    color: #757575;
+}
+.login-doboz, .reg-doboz{
+    width: 400px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #fff;
+    padding: 0 20px 40px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.loginablak, .regablak{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+}
+.login-doboz, .reg-doboz h2{
+    color: #046d8d;
+    margin-bottom: 20px;
+}
+.login-doboz hr{
+    color: #046d8d;
+}
+.input-box{
+    border-radius: 20px;
+    padding: 7px 0 7px 20px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid #046d8d;
+    outline: none;
+}
+.login-btn{
+    background-color: #046d8d;
+    color: #fff;
+    width: 100%;
+    padding: 3px;
+    border-radius: 20px;
+    font-size: 22px;
+    margin: 5px 0 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.login-btn:hover{
+    background-color: #0191b3;
+    transition-delay: 0.2s;
+}
+#Belepesgomb:disabled{
+    box-shadow:  0px 0px 10px red;
+}
+.reg-btn{
+    background-color: #046d8d;
+    color: #fff;
+    width: 100%;
+    padding: 3px;
+    border-radius: 20px;
+    font-size: 22px;
+    margin: 5px 0 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.reg-btn:hover{
+    background-color: #0191b3;
+    transition-delay: 0.2s;
+}
+.megsem-btn, .rmegsem-btn{
+    background-color: #f9530f;
+    color: #fff;
+    width: 100%;
+    padding: 3px;
+    border-radius: 20px;
+    font-size: 22px;
+    margin: 10px 0 30px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.megsem-btn:hover, .rmegsem-btn:hover{
+    background-color: #f72f20;
+    transition-delay: 0.2s;
+}
+.login-doboz a{
+    margin-bottom: 20px;
+    color: #046d8d;
+}
+.input-box:focus:invalid{
+    border-color: red;
+    box-shadow: inset 0px 0px 5px red;
+}
+.input-box:valid{
+    border-color: green;
+    box-shadow: inset 0px 0px 5px green;
+}
+.relytett_hibas{
+    color: red;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+.hibas{
+    color: red;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: visibility 0s, opacity 0.5s;
+}
+.lablec{
+	background-color: grey;
+}
+.Box{
+	background-color: grey;
+}
+.reszletes{
+	height: 540px;
+}
+.reszletes_kep{
+	padding: 2px;  	/* a végén ki kell venni*/
+	border: 2px solid grey ;
+}
+.reszletes_kep img{
+    max-height: 500px;
+    max-width: 100%;
+	display: block;
+    margin-left: auto;
+	margin-right: auto;
+}
+.reszletes_adat{
+	border: 2px solid grey ;
+	padding: 2px;                    /* a végén ki kell venni*/
+	background-color: white;
+	max-height: 540px;
+}
+#fff{
+	float: right;
+}
+.input-box-hf{
+    border-radius: 17px;
+    padding: 7px 0 7px 20px;
+    margin: 5px 0;
+    width: 90%;
+    border: 1px solid #046d8d;
+    outline: none;
+}
+.input-box-hf:focus:invalid{
+    border-color: red;
+    box-shadow: inset 0px 0px 5px red;
+}
+.input-box-hf:valid{
+    border-color: green;
+    box-shadow: inset 0px 0px 5px green;
+}
+.input-box-hfn{
+    border-radius: 17px;
+    padding: 7px 0 7px 20px;
+    margin: 5px 0;
+    width: 30%;
+    border: 1px solid #046d8d;
+    outline: none;
+}
+.input-box-hfn:focus:invalid{
+    border-color: red;
+    box-shadow: inset 0px 0px 5px red;
+}
+.input-box-hfn:valid{
+    border-color: green;
+    box-shadow: inset 0px 0px 5px green;
+}
+#textarea{
+	border-radius: 17px;
+    padding: 7px 0 7px 20px;
+    margin: 5px 0;
+    border: 1px solid #046d8d;
+    outline: none;
+}
+#textarea:focus:invalid{
+    border-color: red;
+    box-shadow: inset 0px 0px 5px red;
+}
+/*#textarea:valid{
+    border-color: green;
+    box-shadow: inset 0px 0px 5px green;
+}*/
+#file{
+	padding: 7px 0 7px 2px;
+    margin: 5px 0;
+}
+#x_link{
+	float: right;
+	
+}
+.input-box-ctg{
+    border-radius: 17px;
+    padding: 7px 0 7px 20px;
+    margin: 5px 0;
+    width: 30%;
+    border: 1px solid #046d8d;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

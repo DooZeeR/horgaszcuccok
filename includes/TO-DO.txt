@@ -1,0 +1,12 @@
+---Pagination nem mûködik
+---hirdetés felvétel
+---hirdetés módosítás
+---hirdetés törlés
+---üzenetek
+---regisztráció válaszemail.
+---footer szar az egész
+---adatbázis feltöltése
+
+
+---   www.ezit.hu
+---   draw.io
