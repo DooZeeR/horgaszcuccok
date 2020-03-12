@@ -27,7 +27,7 @@ if(isset($_POST["action"]) and $_POST["action"]=="tabla_letrehozas"){
 		isset($_POST["psw"]) and 
 		!empty($_POST["psw"])   		
 		){
-		$servername = "localhost";
+		$servername = "mysql.rackhost.hu";
 		$username = $_POST['username'];
 		$password = $_POST['psw'];
 
@@ -37,7 +37,7 @@ if(isset($_POST["action"]) and $_POST["action"]=="tabla_letrehozas"){
 		if (!$conn) {
 			die("Kapcsolódási hiba: " . mysqli_connect_error());
 		}
-		$sql = "CREATE DATABASE login_db character set UTF8 collate utf8_general_ci";
+		$sql = "CREATE DATABASE c15953horgaszcuccok character set UTF8 collate utf8_general_ci";
 					
 		if(mysqli_query($conn, $sql)){
 			echo "Adatbázis létrehova!<br /><br />";
@@ -49,7 +49,7 @@ if(isset($_POST["action"]) and $_POST["action"]=="tabla_letrehozas"){
         } 
         
 
-        $dbname = "login_db";
+        $dbname = "c15953horgaszcuccok";
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -337,7 +337,7 @@ if(isset($_POST["action"]) and $_POST["action"]=="tabla_letrehozas"){
 
 
 
-        $dbname = "login_db";
+        $dbname = "c15953horgaszcuccok";
         
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
