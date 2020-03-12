@@ -967,6 +967,10 @@ function termek_reszletes(){
 }
 
 /*********************** Hirdetes felvetel / Előnézet functions *********************/
+
+
+
+
 if (isset($_POST["action"]) and $_POST["action"] == "cmd_kep_elonezet"){
 	global $kep_elonezet;
 	$T_KEP_NAME = $_FILES['image']['name'];			
@@ -1013,15 +1017,15 @@ if (isset($_POST["action"]) and $_POST["action"] == "cmd_kep_elonezet"){
 							1
 						";
 				if(mysqli_query($conn, $sql)){
-					set_message("<div class='alert alert-success alert-dismissible container-fluid szelesseg'>
+					/*set_message("<div class='alert alert-success alert-dismissible container-fluid szelesseg'>
 					<button type='button' class='close' data-dismiss='alert'>&times;</button>
 					<strong>Figyelem! </strong>  kép módosítva! ".$kep_elonezet."
-					</div>");
+					</div>");*/
 				} else {
-					set_message("<div class='alert alert-danger alert-dismissible container-fluid szelesseg'>
+					/*set_message("<div class='alert alert-danger alert-dismissible container-fluid szelesseg'>
 					<button type='button' class='close' data-dismiss='alert'>&times;</button>
 					<strong>Figyelem! </strong>  Kép módosítás nem sikerült! 
-					</div>");
+					</div>");*/
 				}
 				mysqli_close($conn);
 
@@ -1113,26 +1117,6 @@ if (isset($_POST["action"]) and $_POST["action"]=="cmd_hirdetes_feladas"){
 		$termek_kategoria = $_POST["Kategoria"];
 		$termek_comment = $_POST["Termek_comment"];
 		
-/*
-		echo '<br/>';
-		echo $termek_nev;
-		echo '<br/>';
-		echo $termek_gyarto;
-		echo '<br/>';
-		echo $termek_kep;
-		echo '<br/>';
-		echo $termek_ar;
-		echo '<br/>';
-		echo $termek_hely;
-		echo '<br/>';
-		echo $termek_hirdeto;
-		echo '<br/>';
-		echo $termek_datum;
-		echo '<br/>';
-		echo $termek_kategoria;
-		echo '<br/>';
-		echo $termek_comment;	
-		echo '<br/>';	*/	
 		
 		$conn = kapcsolodas();
 		mysqli_query($conn, "SET NAMES 'UTF8';");
@@ -1147,25 +1131,26 @@ if (isset($_POST["action"]) and $_POST["action"]=="cmd_hirdetes_feladas"){
 									termek_datum,
 									termek_comment
 								  )
-				VALUES(
-							'$termek_kategoria',				
-							'$termek_nev',				
-							'$termek_gyarto',				
-							'$termek_kep',				
-							'$termek_ar',				
-							'$termek_hely',				
-							'$termek_hirdeto',				
-							'$termek_datum',				
-							'$termek_comment' 				
-						)
+						VALUES(
+									'$termek_kategoria',				
+									'$termek_nev',				
+									'$termek_gyarto',				
+									'$termek_kep',				
+									'$termek_ar',				
+									'$termek_hely',				
+									'$termek_hirdeto',				
+									'$termek_datum',				
+									'$termek_comment' 				
+								)
 				";
-		//echo $sql;
+
 		if(mysqli_query($conn, $sql)){
-			//redirect("index.php");
+			redirect("index.php");
 			set_message("<div class='alert alert-success alert-dismissible container-fluid szelesseg'>
-			<button type='button' class='close' data-dismiss='alert'>&times;</button>
-			<strong>Figyelem! </strong>  Hirdetés feladása sikeres! 
-			</div>");
+			<button type='button' class='close' data-dismiss='alert'>&times;</button>      
+			<strong>Figyelem! </strong>  A hirdeteést rögzítettük! 
+			</div>"); // valamiért nem megy
+
 		} else {
 			set_message("<div class='alert alert-danger alert-dismissible container-fluid szelesseg'>
 			<button type='button' class='close' data-dismiss='alert'>&times;</button>
@@ -1181,6 +1166,8 @@ if (isset($_POST["action"]) and $_POST["action"]=="cmd_hirdetes_feladas"){
 
 
 $kep_elonezet = "img_placeholder.jpg";
+
+
 
 
 
