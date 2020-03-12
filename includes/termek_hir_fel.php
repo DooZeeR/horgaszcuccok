@@ -85,7 +85,7 @@
 					<div class="container-fluid">
 						<div  class="row reszletes">
 							<div class="col-lg-6 p-3  reszletes_kep" >
-								<img class="img-fluid"  align="middle" src="<?php echo $kep_elonezet ;?>" >
+								<img class="img-fluid"  align="middle" src="img/<?php echo $kep_elonezet ;?>" >
 							</div>
 							<div class="col-lg-6 p-3 reszletes_adat" >
 								<a class="nav-link"  id="fff" style="font-size: 25px; " href="index.php"><b>X</b></a>

@@ -759,7 +759,7 @@ function vardump_sessions(){
 $category = 'osszes';
 function termek_lista(){
 	
-	$conn = mysqli_connect('localhost', 'root', '12345678','login_db');
+	$conn = mysqli_connect('mysql.rackhost.hu', 'c15953horgasz', 'pikkely','c15953horgaszcuccok');
 
 	if(!$conn) {echo "kapcsolat nem jöttlétre!";}
 	mysqli_query($conn, "SET NAMES 'UTF8';");
@@ -881,7 +881,7 @@ if (isset($_POST["action"]) and $_POST["action"]=="termekreszletes"){
 function termek_reszletes(){
 	
 	
-	$conn = mysqli_connect('localhost', 'root', '12345678','login_db');
+	$conn = mysqli_connect('mysql.rackhost.hu', 'c15953horgasz', 'pikkely','c15953horgaszcuccok');
 
 	if(!$conn) {echo "kapcsolat nem jöttlétre!";}
 	mysqli_query($conn, "SET NAMES 'UTF8';");
@@ -967,9 +967,6 @@ function termek_reszletes(){
 }
 
 /*********************** Hirdetes felvetel / Előnézet functions *********************/
-
-
-
 if (isset($_POST["action"]) and $_POST["action"] == "cmd_kep_elonezet"){
 	global $kep_elonezet;
 	$T_KEP_NAME = $_FILES['image']['name'];			
@@ -1004,7 +1001,7 @@ if (isset($_POST["action"]) and $_POST["action"] == "cmd_kep_elonezet"){
 	}
 	if($ok){
 		move_uploaded_file($_FILES['image']['tmp_name'],"img/".$_FILES['image']['name']);
-		$kep_elonezet = "img/".$_FILES['image']['name'];
+		$kep_elonezet = $_FILES['image']['name'];
 
 
 		$conn = kapcsolodas();
@@ -1095,30 +1092,47 @@ if (isset($_POST["action"]) and $_POST["action"]=="cmd_hirdetes_feladas"){
 			mysqli_close($conn);
 		}
 		
+		$termek_nev;
+		$termek_gyarto;
+		$termek_kep;
+		$termek_ar;
+		$termek_hely;
+		$termek_hirdeto;
+		$termek_datum;
+		$termek_kategoria;
+		$termek_comment;
 		
+
+		$termek_nev = $_POST["Termek_nev"];
+		$termek_gyarto = $_POST["Termek_gyarto"];
+		$termek_kep = $kep_elonezet2;
+		$termek_ar = $_POST["Termek_ar"];
+		$termek_hely = $_POST["Termek_hely"];
+		$termek_hirdeto = $username;
+		$termek_datum = $datum;
+		$termek_kategoria = $_POST["Kategoria"];
+		$termek_comment = $_POST["Termek_comment"];
 		
+/*
 		echo '<br/>';
-		echo $_POST["Termek_nev"];
+		echo $termek_nev;
 		echo '<br/>';
-		echo $_POST["Termek_gyarto"];
+		echo $termek_gyarto;
 		echo '<br/>';
-		echo $_POST["Termek_hely"];
+		echo $termek_kep;
 		echo '<br/>';
-		echo $_POST["Termek_ar"];
+		echo $termek_ar;
 		echo '<br/>';
-		echo $_POST["Termek_comment"];
+		echo $termek_hely;
 		echo '<br/>';
-		echo $_POST["Kategoria"];
+		echo $termek_hirdeto;
 		echo '<br/>';
-		echo $email;
+		echo $termek_datum;
 		echo '<br/>';
-		echo $id;
+		echo $termek_kategoria;
 		echo '<br/>';
-		echo $username;
-		echo '<br/>';
-		echo $datum;
-		echo '<br/>';
-		echo $kep_elonezet2;			
+		echo $termek_comment;	
+		echo '<br/>';	*/	
 		
 		$conn = kapcsolodas();
 		mysqli_query($conn, "SET NAMES 'UTF8';");
@@ -1134,18 +1148,18 @@ if (isset($_POST["action"]) and $_POST["action"]=="cmd_hirdetes_feladas"){
 									termek_comment
 								  )
 				VALUES(
-							termek_kategoria = ".$_POST["Kategoria"]." ,				
-							termek_nev = ".$_POST["Termek_nev"]." ,				
-							termek_gyarto =  ".$_POST["Termek_gyarto"]." ,				
-							termek_kep = ".$kep_elonezet2." ,				
-							termek_ar = ".$_POST["Termek_ar"]." ,				
-							termek_hely = ".$_POST["Termek_hely"]." ,				
-							termek_hirdeto = ".$username." ,				
-							termek_datum = ".$datum." ,				
-							termek_comment = ".$_POST["Termek_comment"]." 				
+							'$termek_kategoria',				
+							'$termek_nev',				
+							'$termek_gyarto',				
+							'$termek_kep',				
+							'$termek_ar',				
+							'$termek_hely',				
+							'$termek_hirdeto',				
+							'$termek_datum',				
+							'$termek_comment' 				
 						)
 				";
-		echo $sql;
+		//echo $sql;
 		if(mysqli_query($conn, $sql)){
 			//redirect("index.php");
 			set_message("<div class='alert alert-success alert-dismissible container-fluid szelesseg'>
@@ -1167,7 +1181,6 @@ if (isset($_POST["action"]) and $_POST["action"]=="cmd_hirdetes_feladas"){
 
 
 $kep_elonezet = "img_placeholder.jpg";
-
 
 
 

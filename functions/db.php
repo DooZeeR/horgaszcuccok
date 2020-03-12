@@ -1,6 +1,6 @@
 <?php 
 
-$con = mysqli_connect('localhost', 'root', '12345678','login_db');
+$con = mysqli_connect('mysql.rackhost.hu', 'c15953horgasz', 'pikkely','c15953horgaszcuccok');
 
 
 function row_count($result){
@@ -42,10 +42,10 @@ function fetch_array($result){
 
 
 function kapcsolodas(){
-	$servername = "localhost";
-	$username = "root";
-	$password = "12345678";
-	$dbname = "login_db";
+	$servername = "mysql.rackhost.hu";
+	$username = "c15953horgasz";
+	$password = "pikkely";
+	$dbname = "c15953horgaszcuccok";
 
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 
